@@ -5,6 +5,7 @@
 :root {
     --color-primario: #ededed;
     --color-secundario: #00abf0;
+    --color-extra: #081b29;
 }
 
 
@@ -16,7 +17,6 @@
 }
 
 body {
-    background: #081b29;
     color: var(--color-primario);
 }
 
@@ -34,10 +34,23 @@ body {
 }
 
 .logo {
+    position: relative;
     font-size: 25px;
     color: var(--color-primario);
     text-decoration: none;
     font-weight: 600;
+}
+
+.logo::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--color-extra);
+    animation: showRight 1s ease forwards;
+    animation-delay: .4s;
 }
 
 .navbar a {
@@ -57,6 +70,7 @@ body {
 
 .home {
     height: 100vh;
+    background: var(--color-extra);
     display: flex;
     align-items: center;
     padding: 0 10%;
@@ -64,29 +78,83 @@ body {
 
 .home-content {
     max-width: 600px;
+    margin-left: 100px;
 }
 
 .home-content h1 {
+    position: relative;
     font-size: 52px;
     font-weight: 700;
     line-height: 1.2;
 }
 
+.home-content h1::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--color-extra);
+    animation: showRight 1s ease forwards;
+    animation-delay: 1s;
+}
+
 .home-content h3 {
+    position: relative;
     font-size: 32px;
     font-weight: 700;
     color: var(--color-secundario);
 }
 
+.home-content h3::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--color-extra);
+    animation: showRight 1s ease forwards;
+    animation-delay: 1.5s;
+}
+
 .home-content p {
+    position: relative;
     font-size: 16px;
     margin: 20px 0 40px;
 }
 
+.home-content p::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--color-extra);
+    animation: showRight 1s ease forwards;
+    animation-delay: 1.7s;
+}
+
 .home-content .btn-box {
+    position: relative;
     width: 345px;
     height: 50px;
     margin-left: 50px;
+}
+
+.home-content .btn-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--color-extra);
+    animation: showRight 1s ease forwards;
+    animation-delay: 1.7s;
+    z-index: 2;
 }
 
 .btn-box a {
@@ -99,7 +167,7 @@ body {
     background: var(--color-secundario);
     border-radius: 8px;
     font-size: 19px;
-    color: #081b29;
+    color: var(--color-extra);
     text-decoration: none;
     font-weight: 600;
     letter-spacing: 1px;
@@ -110,6 +178,7 @@ body {
 
 .btn-box a:hover {
     color: var(--color-primario);
+    color: var(--color-extra);
 }
 
 .btn-box a::before {
@@ -119,12 +188,85 @@ body {
     left: 0;
     width: 0;
     height: 100%;
-    background: #081b29;
+    background: var(--color-extra);
     z-index: -1;
     transition: .5s;
 }
 
 .btn-box a:hover::before {
     width: 100%;
+    background: var(--color-primario);
 }
+
+.home-sci {
+    position: absolute;
+    bottom: 40px;
+    width: 170px;
+}
+
+.home-sci::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--color-extra);
+    animation: showRight 1s ease forwards;
+    animation-delay: 2.2s;
+    z-index: 2;
+}
+
+.home-sci a:last-child {
+    margin-left: 10px;
+}
+
+.home-sci a {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid var(--color-secundario);
+    border-radius: 50%;
+    font-size: 20px;
+    color: var(--color-secundario);
+    text-decoration: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.home-sci a:hover {
+    color: var(--color-extra);
+    transition: .5s;
+}
+
+.home-sci a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--color-secundario);
+    z-index: -1;
+    transition: .5s;
+}
+
+.home-sci a:hover::before {
+    width: 100%;
+}
+
+/* KEYFRAMES ANIMATION */
+@keyframes showRight {
+    100% {
+        width: 0;
+    }
+}
+
+
+
+
 
